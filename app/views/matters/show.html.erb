@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name or type:</strong>
+  <%= @matter.name_or_type %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @matter.location %>
+</p>
+
+<p>
+  <strong>Acquired date:</strong>
+  <%= @matter.acquired_date %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @matter.value %>
+</p>
+
+<p>
+  <strong>Loaned to:</strong>
+  <%= @matter.loaned_to %>
+</p>
+
+<p>
+  <strong>Loaned date:</strong>
+  <%= @matter.loaned_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @matter.description %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @matter.notes %>
+</p>
+
+<p>
+  <strong>Upc barcode:</strong>
+  <%= @matter.upc_barcode %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @matter.title %>
+</p>
+
+<p>
+  <strong>Released date:</strong>
+  <%= @matter.released_date %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @matter.format %>
+</p>
+
+<p>
+  <strong>Artist or band:</strong>
+  <%= @matter.artist_or_band %>
+</p>
+
+<p>
+  <strong>Track list:</strong>
+  <%= @matter.track_list %>
+</p>
+
+<p>
+  <strong>Amateur:</strong>
+  <%= @matter.amateur %>
+</p>
+
+<p>
+  <strong>Lineage:</strong>
+  <%= @matter.lineage %>
+</p>
+
+<%= link_to 'Edit', edit_matter_path(@matter) %> |
+<%= link_to 'Back', matters_path %>
