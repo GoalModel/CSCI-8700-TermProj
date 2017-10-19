@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :acquired_date %><br>
-    <%= f.date_select :acquired_date %>
+    <%= f.date_select :acquired_date, start_year: Date.today.year - 80, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :value %><br>
@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :loaned_date %><br>
-    <%= f.date_select :loaned_date %>
+    <%= f.date_select :loaned_date, start_year: Date.today.year - 80, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
@@ -53,7 +53,7 @@
   </div>
   <div class="field">
     <%= f.label :released_date %><br>
-    <%= f.date_select :released_date %>
+    <%= f.date_select :released_date, start_year: Date.today.year - 150, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :format %><br>

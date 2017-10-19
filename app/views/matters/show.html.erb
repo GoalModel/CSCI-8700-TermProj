@@ -2,12 +2,12 @@
 
 <p>
   <strong>Name or type:</strong>
-  <%= @matter.name_or_type %>
+  <%= @matter.name_or_type.truncate(200) %>
 </p>
 
 <p>
   <strong>Location:</strong>
-  <%= @matter.location %>
+  <%= @matter.location.truncate(200) %>
 </p>
 
 <p>
@@ -22,7 +22,7 @@
 
 <p>
   <strong>Loaned to:</strong>
-  <%= @matter.loaned_to %>
+  <%= @matter.loaned_to.truncate(200) %>
 </p>
 
 <p>
@@ -32,12 +32,12 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @matter.description %>
+  <%= @matter.description.truncate(200) %>
 </p>
 
 <p>
   <strong>Notes:</strong>
-  <%= @matter.notes %>
+  <%= @matter.notes.truncate(200) %>
 </p>
 
 <p>
@@ -47,7 +47,7 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @matter.title %>
+  <%= @matter.title.truncate(200) %>
 </p>
 
 <p>
@@ -57,17 +57,17 @@
 
 <p>
   <strong>Format:</strong>
-  <%= @matter.format %>
+  <%= @matter.format.truncate(200) %>
 </p>
 
 <p>
   <strong>Artist or band:</strong>
-  <%= @matter.artist_or_band %>
+  <%= @matter.artist_or_band.truncate(200) %>
 </p>
 
 <p>
   <strong>Track list:</strong>
-  <%= @matter.track_list %>
+  <%= @matter.track_list.truncate(200) %>
 </p>
 
 <p>
@@ -77,7 +77,7 @@
 
 <p>
   <strong>Lineage:</strong>
-  <%= @matter.lineage %>
+  <%= @matter.lineage.truncate(200) %>
 </p>
 
 <%= link_to 'Edit', edit_matter_path(@matter) %> |
