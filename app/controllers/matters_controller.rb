@@ -5,6 +5,11 @@ class MattersController < ApplicationController
   # GET /matters.json
   def index
     @matters = Matter.all
+    if params[:search]
+      @matters = Matter.search(params[:search]).order("created_at DESC")
+    else
+      @matters = Matter.all.order("created_at DESC")
+    end
   end
 
   # GET /matters/1

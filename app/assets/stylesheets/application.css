@@ -38,7 +38,7 @@ html, body {
   
 }
 div#main {
-  margin: 0;
+  margin: 10;
   padding: 0 20px 20px;
 }
 a {
@@ -57,7 +57,7 @@ h1 {
   border-bottom: 1px solid DarkSlateGrey;
 }
 h1.title {
-  margin: 0 0 1em;
+  margin: 10 10 1em;
   padding: 10px;
   background-color: lightgreen;
   color: white;
@@ -92,7 +92,7 @@ form label {
 
 u1 {
     list-style-type: none;
-    margin: 0;
+    margin: 10;
     padding: 0;
     overflow: hidden;
 }
