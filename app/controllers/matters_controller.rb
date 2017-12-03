@@ -1,5 +1,7 @@
 class MattersController < ApplicationController
   before_action :set_matter, only: [:show, :edit, :update, :destroy]
+  
+  
 
   # GET /matters
   # GET /matters.json
@@ -9,6 +11,44 @@ class MattersController < ApplicationController
       @matters = Matter.search(params[:search]).order("created_at DESC")
     else
       @matters = Matter.all.order("created_at DESC")
+    end
+  end
+
+  def find
+    @terms = nil
+    @matters = Matter.all
+    puts "Controller 0"
+    puts "#{params}"
+    if params[:commit]
+      @special_hash = {"acquired_date_T" => ":acquired_date" , "loaned_date_T" => ":loaned_date", "released_date_T" => ":released_date"}
+      @not_special_array = ["utf8", "commit", "controller", "action"]
+      params.each do |k,v|
+        puts "Out Here #{k}, #{v} #{@terms}"
+        next if @not_special_array.include? k.to_s
+        puts "Here Maybe #{k}, #{v} #{@terms}"
+        next if v.blank? unless @special_hash.include? k.to_s
+        clean = v.gsub(/[^A-Za-z0-9 ]/, '')
+        puts "Right Cheer #{k}, #{v}, #{clean},  #{@terms}"
+        if clean.blank?
+          clean = @special_hash.fetch(k.to_s)
+          puts "In Here #{k}, #{v}, #{clean}, #{@terms}"
+          @terms = "#{@terms} AND #{clean} != NULL" unless @terms.blank? 
+            @terms ||= "#{clean} != NULL"
+        else
+          @terms = "#{@terms} AND #{k} LIKE '%#{clean.strip}%'" unless @terms.blank? 
+            @terms ||= "#{k} LIKE '%#{clean.strip}%'"
+            puts "In There #{k}, #{v}, #{clean}, #{@terms}"
+        end          
+      end
+      puts "Controller" 
+      puts "Terms #{@terms}"
+      
+      #@matters = Matter.find_it_by(@terms).order("created_at DESC")
+      @matters = Matter.find_it_by(@terms)
+      #@matters.blank?
+      render :index, collection: @matters #unless @matters.blank?
+    else
+      render :find
     end
   end
 

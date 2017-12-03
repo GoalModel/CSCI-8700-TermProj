@@ -13,6 +13,9 @@
 
   <div class="field">
     <%= f.label :name_or_type %><br>
+    <!--
+      <%= f.select :name_or_type, options_for_select([ "media", "music", "movie", "book"]) %>
+    -->
     <%= f.text_field :name_or_type %>
   </div>
   <div class="field">

@@ -17,6 +17,8 @@
 
 <p id="notice"><%= notice %></p>
 
+<%= puts "Putting matters: #{@matters}" %>
+
 <h1>Listing Matters</h1>
 
 <table>
@@ -44,7 +46,7 @@
 
 
   <tbody>
-    <% @matters.each do |matter| %>
+    <% unless @matters.blank? then @matters.each do |matter| %>
       <tr>
         <td><%= matter.name_or_type.truncate(50) %></td>
         <td><%= matter.location.truncate(50) %></td>
@@ -62,14 +64,16 @@
         <td><%= matter.track_list.truncate(50) %></td>
         <td><%= matter.amateur %></td>
         <td><%= matter.lineage.truncate(50) %></td>
+        <td><%= link_to 'Find', matters_find_path %></td>
         <td><%= link_to 'Show', matter %></td>
         <td><%= link_to 'Edit', edit_matter_path(matter) %></td>
         <td><%= link_to 'Destroy', matter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>      
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'Create Matter?', new_matter_path %>
+<%= link_to 'Create Matter?', new_matter_path %> 

@@ -1,0 +1,60 @@
+<%= form_tag(matters_find_path, :method => "get", id: "find-form") do  %>
+ 
+  <div class="field">
+     <label style="width:300px;"> Name or Type (media, movie, music, or book): </label>
+    <%= text_field_tag :name_or_type, nil, placeholder: 'Alpha-Numeric Only', size: 50 %>
+  </div>
+  <div class="field">
+   <label style="width:300px;"> Location: <%= text_field_tag 'location', nil, placeholder: 'Alpha-Numeric Only', size: 50 %></label>
+  </div>
+  <div class="field">
+   <label style="width:300px;"> Date Acquired: </label>
+    <label><%= date_field_tag :acquired_date, ' ', size: 50 %> <%= check_box_tag :acquired_date_T, ' ', checked = false %>   Date Not Blank ?   </label>
+  </div>
+  <div class="field">
+    <label style="width:300px;"> Value: <%= number_field_tag :value,  nil, placeholder: 'Alpha-Numeric Only', size: 50 %> </label>
+  </div>
+  <div class="field">
+    <label style="width:300px;"> Loaned To: <%= text_field_tag :loaned_to,  nil, placeholder: 'Alpha-Numeric Only', size: 50 %></label>
+  </div>
+  <div class="field">
+    <label style="width:300px;"> Date Loaned: </label>
+    <label><%= date_field_tag :loaned_date, ' ', size:50 %> <%= check_box_tag :loaned_date_T, ' ', checked = false %>   Date Not Blank ?   </label>
+  </div>
+  <div class="field">
+    <label style="width:300px;"> Item Description: <%= text_field_tag :description, nil, placeholder: 'Alpha-Numeric Only', size: 50 %></label>
+  </div>
+  <div class="field">
+    <label style="width:300px;"> Notes: <%= text_field_tag :notes, nil, placeholder: 'Alpha-Numeric Only', size: 50 %></label>
+  </div>
+  <div class="field">
+    <label style="width:300px;"> UPC Barcode: <%= number_field_tag :upc_barcode, ' ', size: 50 %></label>
+  </div>
+  <div class="field">
+    <label style="width:300px;"> Title: <%= text_field_tag :title,  nil, placeholder: 'Alpha-Numeric Only', size: 50 %></label>
+  </div>
+  <div class="field">
+    <label style="width:300px;"> Released Date: </label>
+    <label><%= date_field_tag :released_date, ' ', size: 50 %><%= check_box_tag :released_date_T, ' ', checked = false %>   Date Not Blank ?   </label>
+  </div>
+  <div class="field">
+    <label style="width:300px;"> Media Format: <%= text_field_tag :format, nil, placeholder: 'Alpha-Numeric Only', size: 50 %></label>
+  </div>
+  <div class="field">
+    <label style="width:300px;"> Artist or Band <%= text_field_tag :artist_or_band, nil, placeholder: 'Alpha-Numeric Only', size: 50 %></label>
+  </div>
+  <div class="field">
+    <label style="width:300px;"> Contents or Track List: <%= text_field_tag :track_list, nil, placeholder: 'Alpha-Numeric Only', size: 50 %></label>
+  </div>
+  <div class="field">
+    <label style="width:300px;"> Amateur: </label>
+    <%= check_box_tag :amateur, ' ', checked = false, size: 50 %>
+  </div>
+  <div class="field">
+    <label style="width:300px;"> Lineage: <%= text_field_tag :lineage, nil, placeholder: 'Alpha-Numeric Only', size: 50 %></label>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Find Matter", data: { disable_with: "Searching..." } %>
+  </div>
+ 
+ <% end %>
